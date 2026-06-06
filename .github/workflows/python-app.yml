@@ -33,7 +33,7 @@ jobs:
 
       - name: Compile source
         run: |
-          python -m compileall app.py config.py models.py routes utils
+          python -m compileall run.py app
 
       - name: Test with pytest (if tests exist)
         run: |

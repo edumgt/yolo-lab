@@ -1,9 +1,9 @@
 from flask import Flask, jsonify
 from flask_session import Session
-from models import db
-from config import Config
-from routes.auth import auth_bp
-from routes.main import main_bp
+from app.models import db
+from app.config import Config
+from app.routes.auth import auth_bp
+from app.routes.main import main_bp
 from flask_migrate import Migrate
 
 app = Flask(__name__)
@@ -28,11 +28,3 @@ app.register_blueprint(main_bp)
 @app.get("/api/health")
 def health_check():
     return jsonify({"status": "ok", "app_env": app.config.get("APP_ENV", "local")})
-
-
-if __name__ == '__main__':
-    app.run(
-        host=app.config.get("APP_HOST", "0.0.0.0"),
-        port=app.config.get("APP_PORT", 8000),
-        debug=app.config.get("DEBUG", True),
-    )
