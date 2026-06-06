@@ -185,9 +185,9 @@ def index():
 
         else:
             # 샘플 파일 선택
-            filename = file_select
+            filename = secure_filename(file_select)
             ext = filename.rsplit('.', 1)[1].lower()
-            input_path = os.path.join(current_app.config['SAMPLE_FOLDER'], file_select)
+            input_path = os.path.join(current_app.config['SAMPLE_FOLDER'], filename)
 
             if not os.path.exists(input_path):
                 flash("선택한 샘플 파일이 존재하지 않습니다.", "danger")
