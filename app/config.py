@@ -5,7 +5,7 @@ from typing import Optional
 from dotenv import load_dotenv
 
 
-BASE_DIR = Path(__file__).resolve().parent
+BASE_DIR = Path(__file__).resolve().parent.parent
 
 
 def _to_bool(value: Optional[str], default: bool = False) -> bool:

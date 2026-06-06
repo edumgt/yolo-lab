@@ -18,4 +18,4 @@ RUN mkdir -p /app/flask_session /app/static/uploads /app/static/results /app/dat
 
 EXPOSE 8000
 
-CMD ["python", "app.py"]
+CMD ["python", "run.py"]

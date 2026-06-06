@@ -1,9 +1,9 @@
 from flask import Blueprint, render_template, request, session, redirect, url_for, current_app, flash, jsonify, Flask
 from werkzeug.utils import secure_filename
 from ultralytics import YOLO
-from models import db, Result
-from utils.file_utils import is_image, is_video
-from utils.s3_utils import upload_file, generate_presigned_url
+from app.models import db, Result
+from app.utils.file_utils import is_image, is_video
+from app.utils.s3_utils import upload_file, generate_presigned_url
 import os, uuid, threading, tempfile
 import re
 
